@@ -5,10 +5,10 @@
     "description": "The final project for CSE341",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-tumd.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/profile": {
@@ -581,8 +581,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
