@@ -88,7 +88,7 @@ module.exports = (dependencies) => {
             !request.body.date_of_birth || !request.body.gender
         ) {
             return response.status(400).send('One or more of the required fields are missing.');
-        } else{
+        } else {
             //not sure if this is needed so I am commenting it out
             //next();
         }
@@ -141,7 +141,7 @@ module.exports = (dependencies) => {
         if (
             !request.body.first_name || !request.body.last_name ||
             !request.body.date_of_birth || !request.body.gender
-        ){
+        ) {
             return response.status(400).send('One or more of the required fields are missing.');
         } else {
             //not sure if this is needed so I am commenting it out

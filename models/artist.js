@@ -4,7 +4,7 @@ module.exports = (dependencies) => {
         last_name: String,
         date_of_birth: Date,
         gender: String
-        
+
     });
 
     dependencies.mongoose.model('Artist', artist);

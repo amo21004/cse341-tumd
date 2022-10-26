@@ -10,14 +10,14 @@ exports.songValidation = [
   check('rating', 'Please, use an integer number for the rating.').isInt(),
   check('release_year', 'Please, use an integer number for release_year.').isInt(),
   check('summary', 'Please insert a valid value.').isString(),
-  check('artist').custom((artist)=>{
-    if(ObjectId.isValid(artist)){
-        if((String)(new ObjectId(artist)) === artist){
-            return true;
-        }
+  check('artist').custom((artist) => {
+    if (ObjectId.isValid(artist)) {
+      if ((String)(new ObjectId(artist)) === artist) {
+        return true;
+      }
     }
-    else{
-        return Promise.reject('Value for artists is not valid.');
+    else {
+      return Promise.reject('Value for artists is not valid.');
     }
   })
 ];

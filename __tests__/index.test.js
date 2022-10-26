@@ -39,3 +39,11 @@ test('check single song api endpoint (/songs/635005f01d5b57b78ba0b863)', async (
         `{"_id":"635005f01d5b57b78ba0b863","title":"What a Wonderful World","release_year":1967,"rating":5,"summary":"A song that was written by Bob Thiele and George David Weiss, and was recorded by Louis Armstrong.","artist":"63486c9b644380993a785104"}`
     );
 });
+
+test('check single genre api endpoint (/genres/63486d4b644380993a785106)', async () => {
+    expect(JSON.stringify
+        ((await axios('http://localhost:3000/genres/63486d4b644380993a785106')).data)
+    ).toBe(
+        `{"id":"63486d4b644380993a785106","name":"Traditional pop"}`
+    );
+});

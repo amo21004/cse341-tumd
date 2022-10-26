@@ -9,8 +9,8 @@ module.exports = (dependencies) => {
         const users = await dependencies.models.user.find();
 
         const users_processed = [];
-    
-        for(const user in users) {
+
+        for (const user in users) {
             users_processed.push({
                 id: users[user]._id,
                 nickname: users[user].nickname,
@@ -39,7 +39,7 @@ module.exports = (dependencies) => {
             _id: request.params.user_id
         });
 
-        if(!user) {
+        if (!user) {
             return response.status(404).send('User not found');
         }
 

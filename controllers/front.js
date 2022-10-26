@@ -8,8 +8,8 @@ module.exports = (dependencies) => {
 
         const songs = await dependencies.models.song.find();
 
-        for(const song of songs) {
-            const artist = await dependencies.models.artist.findOne({_id: song.artist});
+        for (const song of songs) {
+            const artist = await dependencies.models.artist.findOne({ _id: song.artist });
 
             song.artist = `${artist.first_name} ${artist.last_name}`;
         }
@@ -19,8 +19,8 @@ module.exports = (dependencies) => {
         const users = await dependencies.models.user.find();
 
         const users_processed = [];
-    
-        for(const user in users) {
+
+        for (const user in users) {
             users_processed.push({
                 id: users[user]._id,
                 nickname: users[user].nickname,
@@ -31,8 +31,8 @@ module.exports = (dependencies) => {
 
         const reviews = await dependencies.models.review.find();
 
-        for(const review of reviews) {
-            const user = await dependencies.models.user.findOne({_id: review.user});
+        for (const review of reviews) {
+            const user = await dependencies.models.user.findOne({ _id: review.user });
 
             review.user = user.nickname;
         }

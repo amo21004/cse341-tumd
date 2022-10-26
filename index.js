@@ -41,7 +41,7 @@ const swagger_ui = require('swagger-ui-express');
 
 let swagger_document = require('./swagger.render.json');
 
-if(process.env.ENVIRONMENT == 'local') {
+if (process.env.ENVIRONMENT == 'local') {
     swagger_document = require('./swagger.local.json');
 }
 
@@ -95,6 +95,6 @@ const configuration = {
 
 app.set('view engine', 'ejs');
 app.set('views', configuration.dir.views);
-app.use(express.static( configuration.dir.static ));
+app.use(express.static(configuration.dir.static));
 
 require('./routes')(dependencies);

@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 let doc, outputFile;
 
-for(let i = 1; i <= 2; i++) {
-  if(i == 1) {
+for (let i = 1; i <= 2; i++) {
+  if (i == 1) {
     doc = {
       info: {
         title: 'The Ultimate Music Database',
@@ -15,7 +15,7 @@ for(let i = 1; i <= 2; i++) {
 
     outputFile = './swagger.local.json';
   }
-  else if(i == 2) {
+  else if (i == 2) {
     doc = {
       info: {
         title: 'The Ultimate Music Database',
