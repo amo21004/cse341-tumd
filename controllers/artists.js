@@ -104,15 +104,6 @@ module.exports = (dependencies) => {
     router.put('/:artist_id', dependencies.requires_authentication(), async (request, response, next) => {
         /*
             #swagger.parameters['artist_id'] = {
-                in: 'path',
-                description: 'The ID of the artist to update',
-                required: true,
-                type: 'string'
-            }
-            #swagger.path = '/artists/{artist_id}'
-            #swagger.tags = ['Artist']
-            #swagger.description = 'Updates a artist specified by artist_id'
-            #swagger.parameters['obj'] = {
                 in: 'body',
                 '@schema': {
                     "required": ["first_name", "last_name", "date_of_birth"],
@@ -128,15 +119,17 @@ module.exports = (dependencies) => {
                         "date_of_birth": {
                             "type": "date",
                             "example": "Some birth date..."
-                        }
+                        },
                         "gender": {
                             "type": "string",
                             "example": "Some  gender..."
-                        },
-                        
+                        }
                     }
                 }
             }
+            #swagger.path = '/artists/{artist_id}'
+            #swagger.tags = ['Artist']
+            #swagger.description = 'Updates a artist specified by artist_id'
         */
         if (
             !request.body.first_name || !request.body.last_name ||

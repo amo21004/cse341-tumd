@@ -211,8 +211,11 @@
         }
       }
     },
-    "/songs/genre/{genre_id}\n\n #swagger.tags = [": {
+    "/songs/genre/{genre_id}": {
       "get": {
+        "tags": [
+          "Song"
+        ],
         "description": "Get a list of songs by genre_id",
         "produces": [
           "application/json"
@@ -329,26 +332,34 @@
             "name": "artist_id",
             "in": "path",
             "required": true,
-            "type": "string",
-            "description": "The ID of the artist to update"
+            "type": "string"
           },
           {
-            "name": "body",
+            "name": "artist_id",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
+              "required": [
+                "first_name",
+                "last_name",
+                "date_of_birth"
+              ],
               "properties": {
                 "first_name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Some first name..."
                 },
                 "last_name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Some last name..."
                 },
                 "date_of_birth": {
-                  "example": "any"
+                  "type": "date",
+                  "example": "Some birth date..."
                 },
                 "gender": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Some gender..."
                 }
               }
             }
@@ -649,6 +660,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -669,6 +683,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }

@@ -64,7 +64,7 @@ module.exports = (dependencies) => {
                 required: true,
                 type: 'string'
             }
-            #swagger.path = '/songs/genre/{genre_id}
+            #swagger.path = '/songs/genre/{genre_id}'
             #swagger.tags = ['Song']
             #swagger.description = 'Get a list of songs by genre_id'
         */
